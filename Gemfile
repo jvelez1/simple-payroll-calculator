@@ -18,3 +18,7 @@ gem "puma", "~> 3.4"
 gem "multi_json", "~> 1.11", ">= 1.11.2"
 
 gem "zeitwerk", "~> 2.6"
+
+gem "awesome_print", "~> 1.8"
+
+gem "byebug", "~> 9.0"

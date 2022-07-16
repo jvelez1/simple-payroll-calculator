@@ -21,6 +21,7 @@ class Server < Roda
   route(&:multi_route)
 
   require "./calculator/presenters/hello"
+  require "./calculator/presenters/calculate"
 
   status_handler 404 do
     { code: "404", message: "Route not found" }
