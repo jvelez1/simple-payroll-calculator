@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Montly Payment",
+    "frequency": "monthly"
+  },
+  {
+    "id": 2,
+    "name": "Semi Monthly Payment",
+    "frequency": "semi_monthly"
+  },
+  {
+    "id": 3,
+    "name": "Weekly Payment",
+    "frequency": "weekly"
+  }
+]
