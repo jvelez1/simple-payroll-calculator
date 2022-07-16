@@ -3,13 +3,13 @@
 Server.route "/calculate" do |r|
   r.post do
     request_params = JSON.parse(r.body.read)
-
-    if ::Calculator::CalculatePayrollUseCase.new.call(request_params)
+    response = Calculator::CalculatePayrollUseCase.new.call(request_params)
+    if response.success?
       response.status = 200
       { message: "Calculated" }
     else
       response.status = 400
-      { message: "Some error here" }
+      { message: response.message }
     end
   end
 end

@@ -1,21 +1,35 @@
 # frozen_string_literal: true
 
-module Calculator
-  #
-  # This is the main class of the calculator.
-  # It is responsible for calculating a payroll.
-  #
-  class CalculatePayrollUseCase
-    def initialize; end
+require "byebug"
 
-    def call(_request_params)
-      true
+module Calculator
+  class CalculatePayrollUseCase
+    def initialize(
+      calculate_payroll_schema: Calculator::Infrastructure::Schemas::CALCULATE_PAYROLL_SCHEMA
+    )
+      @calculate_payroll_schema = calculate_payroll_schema
+    end
+
+    def call(request_params)
+      message = validate_input_params(request_params)
+      return result(success: false, message: message) if message.any?
+
+      result(success: true, message: "")
     end
 
     private
 
+    attr_reader :calculate_payroll_schema
+
     # Validate the input data agains schema validator
-    def validate_input_params(request_params); end
+    def validate_input_params(payload)
+      JSON::Validator.fully_validate(
+        calculate_payroll_schema,
+        payload,
+        errors_as_objects: true,
+        strict: true
+      )
+    end
 
     # Fetch required data for payroll calculation.
     def fetch_payroll_data(input); end
@@ -31,5 +45,9 @@ module Calculator
 
     # Process payroll result.
     def persis_payroll_data(output); end
+
+    def result(success:, message:)
+      OpenStruct.new(success?: success, message: message)
+    end
   end
 end
