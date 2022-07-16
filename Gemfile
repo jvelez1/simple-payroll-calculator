@@ -10,3 +10,11 @@ gem "rake", "~> 13.0"
 gem "rspec", "~> 3.0"
 
 gem "rubocop", "~> 1.21"
+
+gem "roda", "~> 3.58"
+
+gem "puma", "~> 3.4"
+
+gem "multi_json", "~> 1.11", ">= 1.11.2"
+
+gem "zeitwerk", "~> 2.6"
