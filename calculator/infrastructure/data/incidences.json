@@ -1,23 +1,27 @@
 [
   {
+    "id": 1,
     "type": "absent",
     "start_date": "2019-01-01",
     "end_date": "2019-01-01",
     "employee_id": 6
   },
   {
+    "id": 2,
     "type": "vacation",
     "start_date": "2019-01-01",
     "end_date": "2019-01-05",
     "employee_id": 6
   },
   {
+    "id": 3,
     "type": "absent",
     "start_date": "2019-01-01",
     "end_date": "2019-01-01",
     "employee_id": 6
   },
   {
+    "id": 4,
     "type": "absent",
     "start_date": "2019-01-01",
     "end_date": "2019-01-01",

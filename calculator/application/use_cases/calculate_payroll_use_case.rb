@@ -24,7 +24,7 @@ module Calculator
 
           payroll_group_id = request_params["payroll_group_id"]
           payroll_group = fetch_payroll_group(payroll_group_id)
-          return result(success: false, message: "Invalid Payroll Group") if payroll_group.empty?
+          return result(success: false, message: "Invalid Payroll Group") unless payroll_group
 
           employees = fetch_employees(payroll_group_id)
           return result(success: false, message: "No employees") if employees.empty?
@@ -52,16 +52,16 @@ module Calculator
 
         # Fetch required data for payroll calculation.
         def fetch_payroll_group(payroll_group_id)
-          payroll_group_repository.find_by_id(payroll_group_id)
+          payroll_group_repository.find_by_id(id: payroll_group_id)
         end
 
         def fetch_employees(payroll_group_id)
-          employee_repository.by_payroll_group_id(payroll_group_id)
+          employee_repository.by_payroll_group_id(payroll_group_id: payroll_group_id)
         end
 
         def fetch_incidences(employees)
           incidence_repository.where(
-            employee_ids: employees.map { |employee| employee["id"] }
+            filters: { employee_ids: employees.map(&:id) }
           )
         end
 
