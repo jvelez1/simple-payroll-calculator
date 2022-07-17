@@ -10,11 +10,9 @@ module Calculator
           payroll_group_id:,
           dto: Calculator::Domain::DTOS::EmployeeDto
         )
-          employees = FileRepository.load_file(FILE_PATH)
-          employees = employees.select { |employee| employee["payroll_group_id"] == payroll_group_id } if employees.any?
-          return [] unless employees.any?
-
-          employees.map { |employee| dto.new(**employee.transform_keys(&:to_sym)) }
+          employees = FileRepository.load_file(FILE_PATH).map { |e| e.transform_keys(&:to_sym) }
+          employees = employees.select { |employee| employee[:payroll_group_id] == payroll_group_id } if employees.any?
+          employees.map { |employee_attributes| dto.new(**employee_attributes) }
         end
       end
     end

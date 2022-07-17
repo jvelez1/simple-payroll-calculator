@@ -4,349 +4,349 @@
      "name":"Francisca",
      "last_name":"Medina",
      "payroll_group_id":2,
-     "daily_salary":98
+     "daily_salary":98.0
   },
   {
      "id":2,
      "name":"Miguel Ángel",
      "last_name":"Urrutia",
      "payroll_group_id":1,
-     "daily_salary":28
+     "daily_salary":28.0
   },
   {
      "id":3,
      "name":"María",
      "last_name":"Bermúdez",
      "payroll_group_id":2,
-     "daily_salary":52
+     "daily_salary":52.0
   },
   {
      "id":4,
      "name":"Francisca",
      "last_name":"Vázquez",
      "payroll_group_id":2,
-     "daily_salary":16
+     "daily_salary":16.0
   },
   {
      "id":5,
      "name":"Soledad",
      "last_name":"Gil",
      "payroll_group_id":2,
-     "daily_salary":53
+     "daily_salary":53.0
   },
   {
      "id":6,
      "name":"Lucas",
      "last_name":"Fonseca",
      "payroll_group_id":1,
-     "daily_salary":49
+     "daily_salary":49.0
   },
   {
      "id":7,
      "name":"Juan Carlos",
      "last_name":"Candelaria",
      "payroll_group_id":1,
-     "daily_salary":53
+     "daily_salary":53.0
   },
   {
      "id":8,
      "name":"Rocio",
      "last_name":"Aragón",
      "payroll_group_id":3,
-     "daily_salary":36
+     "daily_salary":36.0
   },
   {
      "id":9,
      "name":"Sofia",
      "last_name":"Cavazos",
      "payroll_group_id":1,
-     "daily_salary":75
+     "daily_salary":75.0
   },
   {
      "id":10,
      "name":"Gregorio",
      "last_name":"Sedillo",
      "payroll_group_id":2,
-     "daily_salary":44
+     "daily_salary":44.0
   },
   {
      "id":11,
      "name":"Patricia",
      "last_name":"Sierra",
      "payroll_group_id":2,
-     "daily_salary":24
+     "daily_salary":24.0
   },
   {
      "id":12,
      "name":"Agustín",
      "last_name":"Sarabia",
      "payroll_group_id":3,
-     "daily_salary":71
+     "daily_salary":71.0
   },
   {
      "id":13,
      "name":"Jorge",
      "last_name":"Saavedra",
      "payroll_group_id":1,
-     "daily_salary":71
+     "daily_salary":71.0
   },
   {
      "id":14,
      "name":"Victoria",
      "last_name":"Leal",
      "payroll_group_id":1,
-     "daily_salary":43
+     "daily_salary":43.0
   },
   {
      "id":15,
      "name":"Rafael",
      "last_name":"Noriega",
      "payroll_group_id":3,
-     "daily_salary":70
+     "daily_salary":70.0
   },
   {
      "id":16,
      "name":"Mariana",
      "last_name":"Lovato",
      "payroll_group_id":1,
-     "daily_salary":59
+     "daily_salary":59.0
   },
   {
      "id":17,
      "name":"Gilberto",
      "last_name":"Carbajal",
      "payroll_group_id":1,
-     "daily_salary":91
+     "daily_salary":91.0
   },
   {
      "id":18,
      "name":"Lucas",
      "last_name":"Lemus",
      "payroll_group_id":3,
-     "daily_salary":82
+     "daily_salary":82.0
   },
   {
      "id":19,
      "name":"Daniela",
      "last_name":"Montoya",
      "payroll_group_id":1,
-     "daily_salary":66
+     "daily_salary":66.0
   },
   {
      "id":20,
      "name":"Rodrigo",
      "last_name":"Urbina",
      "payroll_group_id":1,
-     "daily_salary":12
+     "daily_salary":12.0
   },
   {
      "id":21,
      "name":"Ángela",
      "last_name":"Briseño",
      "payroll_group_id":3,
-     "daily_salary":91
+     "daily_salary":91.0
   },
   {
      "id":22,
      "name":"Joaquín",
      "last_name":"Pedraza",
      "payroll_group_id":1,
-     "daily_salary":36
+     "daily_salary":36.0
   },
   {
      "id":23,
      "name":"Gabriel",
      "last_name":"Rojo",
      "payroll_group_id":2,
-     "daily_salary":40
+     "daily_salary":40.0
   },
   {
      "id":24,
      "name":"Carlota",
      "last_name":"Raya",
      "payroll_group_id":2,
-     "daily_salary":42
+     "daily_salary":42.0
   },
   {
      "id":25,
      "name":"Luis Miguel",
      "last_name":"Arenas",
      "payroll_group_id":3,
-     "daily_salary":40
+     "daily_salary":40.0
   },
   {
      "id":26,
      "name":"Eloisa",
      "last_name":"Godoy",
      "payroll_group_id":2,
-     "daily_salary":18
+     "daily_salary":18.0
   },
   {
      "id":27,
      "name":"Mario",
      "last_name":"Montero",
      "payroll_group_id":1,
-     "daily_salary":88
+     "daily_salary":88.0
   },
   {
      "id":28,
      "name":"Ramón",
      "last_name":"Esquivel",
      "payroll_group_id":1,
-     "daily_salary":30
+     "daily_salary":30.0
   },
   {
      "id":29,
      "name":"Octavio",
      "last_name":"Aguayo",
      "payroll_group_id":2,
-     "daily_salary":62
+     "daily_salary":62.0
   },
   {
      "id":30,
      "name":"Marcela",
      "last_name":"Atencio",
      "payroll_group_id":3,
-     "daily_salary":43
+     "daily_salary":43.0
   },
   {
      "id":31,
      "name":"Emilia",
      "last_name":"Nieto",
      "payroll_group_id":1,
-     "daily_salary":52
+     "daily_salary":52.0
   },
   {
      "id":32,
      "name":"Sonia",
      "last_name":"Rodríquez",
      "payroll_group_id":3,
-     "daily_salary":70
+     "daily_salary":70.0
   },
   {
      "id":33,
      "name":"Natalia",
      "last_name":"Vázquez",
      "payroll_group_id":3,
-     "daily_salary":43
+     "daily_salary":43.0
   },
   {
      "id":34,
      "name":"Julia",
      "last_name":"Chávez",
      "payroll_group_id":3,
-     "daily_salary":21
+     "daily_salary":21.0
   },
   {
      "id":35,
      "name":"Julio",
      "last_name":"Garrido",
      "payroll_group_id":2,
-     "daily_salary":26
+     "daily_salary":26.0
   },
   {
      "id":36,
      "name":"Teodoro",
      "last_name":"Cabán",
      "payroll_group_id":3,
-     "daily_salary":25
+     "daily_salary":25.0
   },
   {
      "id":37,
      "name":"Miguel",
      "last_name":"Jaramillo",
      "payroll_group_id":2,
-     "daily_salary":92
+     "daily_salary":92.0
   },
   {
      "id":38,
      "name":"Miguel",
      "last_name":"Ruelas",
      "payroll_group_id":2,
-     "daily_salary":38
+     "daily_salary":38.0
   },
   {
      "id":39,
      "name":"Anita",
      "last_name":"Negrón",
      "payroll_group_id":1,
-     "daily_salary":49
+     "daily_salary":49.0
   },
   {
      "id":40,
      "name":"Ricardo",
      "last_name":"Batista",
      "payroll_group_id":2,
-     "daily_salary":35
+     "daily_salary":35.0
   },
   {
      "id":41,
      "name":"Diego",
      "last_name":"Ortega",
      "payroll_group_id":2,
-     "daily_salary":27
+     "daily_salary":27.0
   },
   {
      "id":42,
      "name":"Guillermo",
      "last_name":"Briseño",
      "payroll_group_id":1,
-     "daily_salary":15
+     "daily_salary":15.0
   },
   {
      "id":43,
      "name":"Luis",
      "last_name":"Juárez",
      "payroll_group_id":1,
-     "daily_salary":91
+     "daily_salary":91.0
   },
   {
      "id":44,
      "name":"Laura",
      "last_name":"Carrasco",
      "payroll_group_id":1,
-     "daily_salary":69
+     "daily_salary":69.0
   },
   {
      "id":45,
      "name":"Claudia",
      "last_name":"Rincón",
      "payroll_group_id":3,
-     "daily_salary":16
+     "daily_salary":16.0
   },
   {
      "id":46,
      "name":"Estela",
      "last_name":"Ulloa",
      "payroll_group_id":2,
-     "daily_salary":46
+     "daily_salary":46.0
   },
   {
      "id":47,
      "name":"Octavio",
      "last_name":"Saavedra",
      "payroll_group_id":3,
-     "daily_salary":73
+     "daily_salary":73.0
   },
   {
      "id":48,
      "name":"Claudio",
      "last_name":"Orellana",
      "payroll_group_id":1,
-     "daily_salary":60
+     "daily_salary":60.0
   },
   {
      "id":49,
      "name":"Laura",
      "last_name":"Nazario",
      "payroll_group_id":3,
-     "daily_salary":54
+     "daily_salary":54.0
   },
   {
      "id":50,
      "name":"Jorge Luis",
      "last_name":"Cavazos",
      "payroll_group_id":2,
-     "daily_salary":56
+     "daily_salary":56.0
   }
 ]

@@ -26,3 +26,7 @@ gem "byebug", "~> 9.0"
 gem "dry-schema", "~> 1.9", ">= 1.9.3"
 
 gem "dry-validation", "~> 1.8", ">= 1.8.1"
+
+gem "dry-types", "~> 1.5", ">= 1.5.1"
+
+gem "dry-struct", "~> 1.4"

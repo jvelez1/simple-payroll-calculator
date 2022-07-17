@@ -1,28 +1,16 @@
 # frozen_string_literal: true
 
+require "./calculator/types"
+
 module Calculator
   module Domain
     module DTOS
-      class EmployeeDto
-        attr_accessor :id, :name, :last_name, :payroll_group_id, :daily_salary
-
-        def initialize(id:, name:, last_name:, payroll_group_id:, daily_salary:)
-          @id = id
-          @name = name
-          @last_name = last_name
-          @payroll_group_id = payroll_group_id
-          @daily_salary = daily_salary
-        end
-
-        def to_h
-          {
-            id: id,
-            name: name,
-            last_name: last_name,
-            payroll_group_id: payroll_group_id,
-            daily_salary: daily_salary
-          }
-        end
+      class EmployeeDto < ::Dry::Struct
+        attribute :id, Types::Strict::Integer
+        attribute :name, Types::Strict::String
+        attribute :last_name, Types::Strict::String
+        attribute :payroll_group_id, Types::Strict::Integer
+        attribute :daily_salary, Types::Strict::Float
       end
     end
   end

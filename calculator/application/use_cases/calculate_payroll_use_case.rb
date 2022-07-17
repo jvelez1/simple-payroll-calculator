@@ -55,7 +55,6 @@ module Calculator
                     :payroll_calculation_input_builder,
                     :payroll_range_validator
 
-
         def validate_inputs_agains_schema(params)
           calculate_payroll_schema.call(params).errors.to_h
         end

@@ -12,8 +12,8 @@ module Calculator
           payroll_groups = FileRepository.load_file(FILE_PATH)
           return nil unless payroll_groups.any?
 
-          payroll_groups = payroll_groups.select { |payroll_group| payroll_group["id"] == id }
-          payroll_groups.map { |payroll_group| dto.new(**payroll_group.transform_keys(&:to_sym)) }
+          payroll_group = payroll_groups.find { |pg| pg["id"] == id }
+          dto.new(**payroll_group.transform_keys(&:to_sym)) if payroll_group
         end
       end
     end
