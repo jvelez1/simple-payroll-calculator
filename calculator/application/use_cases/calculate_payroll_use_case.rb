@@ -7,7 +7,7 @@ module Calculator
     module UseCases
       class CalculatePayrollUseCase
         def initialize(
-          calculate_payroll_schema: Calculator::Infrastructure::Schemas::CalculationPayrollSchema.new,
+          calculate_payroll_schema: Calculator::Infrastructure::Schemas::CalculationPayrollSchema,
           payroll_range_validator: Calculator::Domain::Validators::PayrollRangeValidator.new,
           payroll_group_repository: Calculator::Infrastructure::Repositories::PayrollGroupRepository.new,
           employee_repository: Calculator::Infrastructure::Repositories::EmployeeRepository.new,
@@ -57,12 +57,7 @@ module Calculator
 
         # Validate the input data agains schema validator
         def validate_inputs_agains_schema(payload)
-          JSON::Validator.fully_validate(
-            calculate_payroll_schema.schema,
-            payload,
-            errors_as_objects: true,
-            strict: true
-          )
+          calculate_payroll_schema.call(payload).errors.to_h
         end
 
         def validate_dates(payload)

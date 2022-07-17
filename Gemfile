@@ -23,4 +23,4 @@ gem "awesome_print", "~> 1.8"
 
 gem "byebug", "~> 9.0"
 
-gem "json-schema", "~> 3.0"
+gem 'dry-schema', '~> 1.9', '>= 1.9.3'
