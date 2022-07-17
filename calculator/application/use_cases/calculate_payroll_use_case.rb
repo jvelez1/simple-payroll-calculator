@@ -7,13 +7,15 @@ module Calculator
     module UseCases
       class CalculatePayrollUseCase
         def initialize(
-          calculate_payroll_schema: Calculator::Infrastructure::Schemas::CALCULATE_PAYROLL_SCHEMA,
+          calculate_payroll_schema: Calculator::Infrastructure::Schemas::CalculationPayrollSchema.new,
+          payroll_range_validator: Calculator::Domain::Validators::PayrollRangeValidator.new,
           payroll_group_repository: Calculator::Infrastructure::Repositories::PayrollGroupRepository.new,
           employee_repository: Calculator::Infrastructure::Repositories::EmployeeRepository.new,
           incidence_repository: Calculator::Infrastructure::Repositories::IncidenceRepository.new,
           payroll_calculation_input_builder: Calculator::Application::Builders::CalculationPayrollInputBuilder.new
         )
           @calculate_payroll_schema = calculate_payroll_schema
+          @payroll_range_validator = payroll_range_validator
           @payroll_group_repository = payroll_group_repository
           @employee_repository = employee_repository
           @incidence_repository = incidence_repository
@@ -21,8 +23,11 @@ module Calculator
         end
 
         def call(request_params) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-          message = validate_input_params(request_params)
+          message = validate_inputs_agains_schema(request_params)
           return result(success: false, message: message) if message.any?
+
+          message = validate_dates(request_params)
+          return result(success: false, message: message) if message
 
           payroll_group_id = request_params["payroll_group_id"]
           payroll_group = fetch_payroll_group(payroll_group_id)
@@ -47,16 +52,23 @@ module Calculator
                     :payroll_group_repository,
                     :employee_repository,
                     :incidence_repository,
-                    :payroll_calculation_input_builder
+                    :payroll_calculation_input_builder,
+                    :payroll_range_validator
 
         # Validate the input data agains schema validator
-        def validate_input_params(payload)
+        def validate_inputs_agains_schema(payload)
           JSON::Validator.fully_validate(
-            calculate_payroll_schema,
+            calculate_payroll_schema.schema,
             payload,
             errors_as_objects: true,
             strict: true
           )
+        end
+
+        def validate_dates(payload)
+          start_date = payload["start_date"]
+          end_date = payload["end_date"]
+          payroll_range_validator.call(start_date: start_date, end_date: end_date)
         end
 
         # Fetch required data for payroll calculation.
