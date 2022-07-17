@@ -8,18 +8,15 @@ module Calculator
           @dto = dto
         end
 
-        def build(payroll_group:, employees:, incidences:) # rubocop:disable Metrics/MethodLength
+        def build(payroll_group:, employees:, incidences:)
           grouped_incidences = incidences.group_by(&:employee_id)
           employees_with_incidences = employees.map do |employee|
             {
-              employee: employee,
-              incidences: grouped_incidences[employee.id] || []
+              **employee.to_h,
+              incidences: -> { grouped_incidences[employee.id] || [] }.call.map(&:to_h)
             }
           end
-          dto.new(
-            payroll_group: payroll_group,
-            employees: employees_with_incidences
-          )
+          dto.new(payroll_group: payroll_group.to_h, employees: employees_with_incidences)
         end
 
         private
