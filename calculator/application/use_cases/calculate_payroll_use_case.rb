@@ -22,14 +22,14 @@ module Calculator
           @payroll_calculation_input_builder = payroll_calculation_input_builder
         end
 
-        def call(request_params) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-          message = validate_inputs_agains_schema(request_params)
+        def call(params) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+          message = validate_inputs_agains_schema(params)
           return result(success: false, message: message) if message.any?
 
-          message = validate_dates(request_params)
-          return result(success: false, message: message) if message
+          message = validate_dates(params)
+          return result(success: false, message: message) if message.any?
 
-          payroll_group_id = request_params["payroll_group_id"]
+          payroll_group_id = params[:payroll_group_id]
           payroll_group = fetch_payroll_group(payroll_group_id)
           return result(success: false, message: "Invalid Payroll Group") unless payroll_group
 
@@ -55,15 +55,14 @@ module Calculator
                     :payroll_calculation_input_builder,
                     :payroll_range_validator
 
-        # Validate the input data agains schema validator
-        def validate_inputs_agains_schema(payload)
-          calculate_payroll_schema.call(payload).errors.to_h
+
+        def validate_inputs_agains_schema(params)
+          calculate_payroll_schema.call(params).errors.to_h
         end
 
-        def validate_dates(payload)
-          start_date = payload["start_date"]
-          end_date = payload["end_date"]
-          payroll_range_validator.call(start_date: start_date, end_date: end_date)
+        def validate_dates(params)
+          dates = params.slice(:start_date, :end_date)
+          payroll_range_validator.call(**dates).errors.to_h
         end
 
         # Fetch required data for payroll calculation.
