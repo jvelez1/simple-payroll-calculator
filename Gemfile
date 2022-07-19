@@ -30,3 +30,7 @@ gem "dry-validation", "~> 1.8", ">= 1.8.1"
 gem "dry-types", "~> 1.5", ">= 1.5.1"
 
 gem "dry-struct", "~> 1.4"
+
+gem "dry-monads", "~> 1.4"
+
+gem "dry-auto_inject", "~> 0.9.0"

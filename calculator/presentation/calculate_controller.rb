@@ -6,7 +6,13 @@ Server.route "/calculate" do |r|
     calculator_response = Calculator::Application::UseCases::CalculatePayrollUseCase.new.call(
       request_params.transform_keys(&:to_sym)
     )
-    response.status = calculator_response.success? ? 200 : 422
-    { message: calculator_response.message, object: calculator_response.object.to_h }.compact.to_json
+
+    if calculator_response.success?
+      response.status = 200
+      { payroll: calculator_response.value!.to_h }.to_json
+    else
+      response.status = 400
+      { errors: calculator_response.failure.to_h }.to_json
+    end
   end
 end
